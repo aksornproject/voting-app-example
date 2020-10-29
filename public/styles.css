@@ -1,0 +1,24 @@
+* {
+    background-color: wheat;    
+}
+
+.content {
+    max-width: 500px;
+    margin: auto;    
+    text-align: center;
+    font-size: 120%;
+
+    /* background-color: */
+}
+
+.title {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-size: 250%;
+}
+
+.myButton {
+    margin:20px;
+    font-size: 150%;
+    padding: 4px 7px 4px 7px; 
+}
