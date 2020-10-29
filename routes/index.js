@@ -12,10 +12,10 @@ router.post('/', async (req,res) => {
 
     if (chosen === 'Cats') {
         [err, result] = await to(choices.findOneAndUpdate({}, {$inc : {'cats' : 1}}));
-        if(!result) res.send('Error Occured!');
+        if(err) return res.send('Error Occured!');
     } else {
         [err, result] = await to(choices.findOneAndUpdate({}, {$inc : {'dogs' : 1}}));
-        if(err) res.send('Error Occured!');
+        if(err) return res.send('Error Occured!');
     }
 
     res.send(`Vote for ${chosen} recorded!`);

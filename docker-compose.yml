@@ -1,0 +1,24 @@
+version: "3"
+services:
+  web:
+    build: 
+      context: . # web service is built from Dockerfile in current directory
+      dockerfile: Dockerfile
+    env_file: .env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    env_file: .env
+    ports:
+      - "27018:27017"
+    volumes:     
+      - dbdata:/data/db # The named volume dbdata will persist the data stored in Mongo’s default data directory, /data/db. 
+                        # This ensures that data is not lost when container is stopped or removed.
+
+volumes:
+  dbdata:
+      
