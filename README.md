@@ -16,8 +16,8 @@ Vote App เป็นแอปพลิเคชันสำหรับโห�
 ### 🔹 2. โคลนโปรเจกต์
 
 ```sh
-git clone https://github.com/your-repo/vote-app.git
-cd vote-app
+git clone https://github.com/aksornproject/voting-app-example.git
+cd voting-app-example
 ```
 
 ### 🔹 3. ติดตั้ง dependencies
