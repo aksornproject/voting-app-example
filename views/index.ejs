@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="./styles.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vote App</title>
-</head> 
-
+    <link rel="stylesheet" href="/styles.css">
+</head>
 <body>
+
+    <header>
+        <img src="https://www.aksorn.com/assets/img/home/key_banner1.png" alt="Voting Aksorn Application" class="logo">
+    </header>
+
     <div class="content">
-        <div class="title">Pick your Favourite!</div>
-        <form  method="post">
-            <input type="submit" name="cats" value="Cats" class="myButton">
-            OR
-            <input type="submit" name="dogs" value="Dogs" class="myButton">
+        <h1 class="title">Pick your Favourite!</h1>
+
+        <form action="/vote" method="post">
+            <div class="vote-container">
+                <button type="submit" name="category" value="Cats" class="myButton">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1864/1864510.png" alt="Cute Cat" class="pet-image">
+                    Vote for Cats
+                </button>
+
+                <button type="submit" name="category" value="Dogs" class="myButton">
+                    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Cute Dog" class="pet-image">
+                    Vote for Dogs
+                </button>
+            </div>
         </form>
-    </div> 
+
+        <h2>Current Votes</h2>
+        <table>
+            <tr>
+                <th>Category</th>
+                <th>Votes</th>
+            </tr>
+            <% votes.forEach(vote => { %>
+                <tr>
+                    <td><%= vote.category %></td>
+                    <td><%= vote.votes %></td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+
 </body>
 </html>

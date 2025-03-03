@@ -1,24 +1,99 @@
-* {
-    background-color: wheat;    
+/* ตั้งค่าสีหลัก */
+:root {
+    --primary-color: #E94E1B; /* สีส้มแดง */
+    --secondary-color: #F9A602; /* สีเหลืองส้ม */
+    --background-color: #FFF3E0; /* สีครีมอ่อน */
+    --text-color: #4A4A4A; /* สีเทาดำ */
 }
 
-.content {
-    max-width: 500px;
-    margin: auto;    
+body {
+    font-family: 'Comic Sans MS', sans-serif;
     text-align: center;
-    font-size: 120%;
-
-    /* background-color: */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
 }
 
-.title {
-    margin-top: 100px;
-    margin-bottom: 50px;
-    font-size: 250%;
+/* โลโก้ */
+.logo {
+    width: 200px;
+    margin: 20px auto;
+    display: block;
 }
 
+/* กล่องเนื้อหา */
+.content {
+    background: white;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* แถวโหวต (ให้อยู่แนวนอน) */
+.vote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+/* รูปภาพการ์ตูน */
+.pet-image {
+    width: 120px;
+    height: auto;
+}
+
+/* ปุ่มโหวต */
 .myButton {
-    margin:20px;
-    font-size: 150%;
-    padding: 4px 7px 4px 7px; 
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 3px solid var(--primary-color);
+}
+
+.myButton:hover {
+    transform: scale(1.1);
+}
+
+/* ปุ่มแมว */
+.myButton[name="category"][value="Cats"] {
+    color: var(--primary-color);
+}
+
+/* ปุ่มสุนัข */
+.myButton[name="category"][value="Dogs"] {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* ตารางคะแนน */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid var(--primary-color);
+    padding: 15px;
+}
+
+th {
+    background: var(--primary-color);
+    color: white;
+}
+
+td {
+    background: #FFE5B4;
 }

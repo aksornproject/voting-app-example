@@ -1,16 +1,16 @@
-FROM node:12
+# ใช้ Node.js เวอร์ชัน LTS
+FROM node:18
 
-WORKDIR /usr/src/app
+# ตั้งค่าโฟลเดอร์ทำงานในคอนเทนเนอร์
+WORKDIR /app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# คัดลอกไฟล์ package.json และ package-lock.json ไปยังคอนเทนเนอร์
 COPY package*.json ./
 
+# ติดตั้ง dependencies
 RUN npm install
 
-# Bundle app source
+# คัดลอกไฟล์โปรเจกต์ทั้งหมดไปที่ /app
 COPY . .
 
-EXPOSE 3000
-CMD [ "npm", "start" ]
+# กำหนดพอร์ตที่แอปจะรัน
