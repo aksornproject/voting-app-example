@@ -41,6 +41,14 @@ node server.js
 
 ---
 
+### 🔹 6. การ Build docker image
+
+```sh
+docker build -t voting-app:latest . 
+```
+
+---
+
 ## 📁 โครงสร้างไฟล์
 
 ```
